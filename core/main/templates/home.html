@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <main>
+            <!-- Modal -->
+        <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Carrito de compras</h3>
+            <p>Aquí puedes ver los artículos en tu carrito.</p>
+        </div>
+        </div>
+
+        <div class="carousel-container" id="carrusell">
+        <section>
+            <h2>Nuestro compromiso ¡Tu necesidad!</h2>
+        </section>
+        <div class="carousel-slide">
+            <img src="{% static 'img/slides/products-nike-boots-shoe-wallpaper-preview.jpg' %}" alt="Imagen 1">
+            <div class="carousel-description">
+                <h3 class="carousel-slogan">Where Every Step Matters</h3>
+                <p>Descubre la fusión de estilo y poder con estas botas Nike, diseñadas para destacar en cualquier ocasión. Eleva tu presencia con cada paso que das.</p>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="{% static 'img/slides/16641017879724.webp' %}" alt="Imagen 2">
+            <div class="carousel-description">
+                <h3 class="carousel-slogan">Where Every Step Matters</h3>
+                <p>Experimenta la comodidad definitiva con estos versátiles y elegantes zapatos. Diseñados para adaptarse a tu estilo de vida y brindarte el máximo confort en cada paso.</p>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="{% static 'img/slides/adidas-shoes-sneakers-sport-wallpaper-preview.jpg' %}" alt="Imagen 3">
+            <div class="carousel-description">
+                <h3 class="carousel-slogan">Where Every Step Matters</h3>
+                <p>Embárcate en una aventura deportiva con estos tenis Adidas llenos de energía y vitalidad. Potencia tu rendimiento mientras te destacas con estilo en el mundo del deporte.</p>
+            </div>
+        </div>
+        
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+        </main>
+{% endblock content %}

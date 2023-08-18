@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="card-container">
+    {% for z in zapas %}
+    <div class="card-title">{{ z.nombre_art }}</div>
+    <div class="card-picture"><img src="{{ z.imagen_1.url }}"></div>
+    <div class="card-description">
+        <p>$ {{ z.precio }}</p>
+    <button class="card-btn">Ver</button>
+    <button class="card-btn" id="btn-carrito-modal">Agregar al carrito</button>
+</div>
+{% endfor %}
+</section>
+
+{% endblock content %}
