@@ -1,19 +1,49 @@
-{% extends 'base.html' %}
+    {% extends 'base.html' %}
+    {% load static %}
+    {% block title %}Productos - Envíos a todo el mundo 🛍️{% endblock %}
+    {% block content %}
+    <div class="productos-container">
+        <aside id="categorias-aside">
+            <p><b>CATEGORIAS</b></p>
+            <ul class="categorias-aside-list">
+                <li><a href="#">Alpargatas</a></li>
+                <li><a href="#">Botas altas</a></li>
+                <li><a href="#">Botas de lluvia</a></li>
+                <li><a href="#">Botines</a></li>
+                <li><a href="#">Borceguíes</a></li>
+                <li><a href="#">Chanclas</a></li>
+                <li><a href="#">Deportivas</a></li>
+                <li><a href="#">Mocasines</a></li>
+                <li><a href="#">Niñas</a></li>
+                <li><a href="#">Niños</a></li>
+                <li><a href="#">Ojotas</a></li>
+                <li><a href="#">Sandalias</a></li>
+                <li><a href="#">Zapatillas de ballet</a></li>
+                <li><a href="#">Zapatillas de correr</a></li>
+                <li><a href="#">Zapatillas de skate</a></li>
+                <li><a href="#">Zapatillas de tacón</a></li>
+                <li><a href="#">Zapatos</a></li>
+                <li><a href="#">Zapatos de fiesta</a></li>
+                <li><a href="#">Urbanas</a></li>
+            </ul>        
+        </aside>
+        <main class="main-container">
+            <section class="card-container">
+                {% for x in zapas %}
+                    
+                        <div class="product">
+                            <img src="{{ x.imagen }}" alt="{{ x.nombre }}">
+                            <h4 id="product-name">{{ x.nombre }}</h5>
+                            <p><b>$ {{ x.formatted_price }}</b></p>
+                            <div class="btn-shop-container">
+                            </div>
+                                <button class="add-to-cart" data-producto="{{ x.nombre }}" ><i class="fas fa-cart-shopping"></i></button>
+                                <button class="add-to-fav"><i class="fas fa-heart"></i></button>
+                            <a href="{% url 'detalles_producto' pk=x.pk %}" style="color:black;">Ver producto</a>
+                        </div>
+                {% endfor %}
 
-{% load static %}
-
-{% block content %}
-
-<section class="card-container">
-    {% for z in zapas %}
-    <div class="card-title">{{ z.nombre_art }}</div>
-    <div class="card-picture"><img src="{{ z.imagen_1.url }}"></div>
-    <div class="card-description">
-        <p>$ {{ z.precio }}</p>
-    <button class="card-btn">Ver</button>
-    <button class="card-btn" id="btn-carrito-modal">Agregar al carrito</button>
-</div>
-{% endfor %}
-</section>
-
-{% endblock content %}
+            </section>
+        </main>
+    </div>
+    {% endblock content %}

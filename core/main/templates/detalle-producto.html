@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title%}{{ producto.nombre }}{% endblock %}
+{% block content %}
+{% comment %} <div class="img-zoom-container">
+    <img id="myimage" src="img_girl.jpg" width="300" height="240" alt="Girl">
+    <div id="myresult" class="img-zoom-result"></div>
+</div> {% endcomment %}
+<div class="links-in-detail">
+    <a href="{% url 'inicio' %}" style="color:black"><b>Inicio</b></a><span>/</span><a href="{% url 'productos' %}" style="color:black"><b>Productos</b><span>/</span>
+</div>
+<div class="producto-detalle">
+    <img src="{{ producto.imagen }}" alt="{{ producto.nombre }}" class='img-detail'>
+    <h2>{{ producto.nombre }}</h2>
+    <h3>Precio: ${{ producto.precio }}</h3>
+    <button>Comprar</button>
+</div>
+{% endblock content %}

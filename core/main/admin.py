@@ -1,4 +1,8 @@
 from django.contrib import admin
-from .models import Producto
+from .models import *
 
-admin.site.register(Producto)
+admin.site.register(Zapatilla),
+admin.site.register(Carrito),
+admin.site.register(Favorito),
+admin.site.register(DetallesCarrito),
+

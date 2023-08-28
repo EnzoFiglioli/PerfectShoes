@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <h1>Resultados de la Búsqueda</h1>
+        <p>Se encontraron {{ results|length }} resultados para: <b>{{ query }}</b></p>
+        <ul>
+            {% for zapa in results %}
+                <li><a href="{% url 'detalles_producto' pk=zapa.pk %}">{{ zapa.nombre }}</a></li>
+            {% empty %}
+                <li>No se encontraron resultados.</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,45 +1,63 @@
 {% extends 'base.html' %}
+{% block title %}PerfectShoes - Envíos a todo el mundo 🛍️{% endblock title %}
 {% load static %}
-{% block content %}
-        <main>
-            <!-- Modal -->
-        <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Carrito de compras</h3>
-            <p>Aquí puedes ver los artículos en tu carrito.</p>
-        </div>
-        </div>
 
-        <div class="carousel-container" id="carrusell">
-        <section>
-            <h2>Nuestro compromiso ¡Tu necesidad!</h2>
-        </section>
+{% block content %}
+<main class="main-container">
+    <div class="carousel-container" id="carrusell">
         <div class="carousel-slide">
             <img src="{% static 'img/slides/products-nike-boots-shoe-wallpaper-preview.jpg' %}" alt="Imagen 1">
-            <div class="carousel-description">
-                <h3 class="carousel-slogan">Where Every Step Matters</h3>
-                <p>Descubre la fusión de estilo y poder con estas botas Nike, diseñadas para destacar en cualquier ocasión. Eleva tu presencia con cada paso que das.</p>
-            </div>
         </div>
         <div class="carousel-slide">
             <img src="{% static 'img/slides/16641017879724.webp' %}" alt="Imagen 2">
-            <div class="carousel-description">
-                <h3 class="carousel-slogan">Where Every Step Matters</h3>
-                <p>Experimenta la comodidad definitiva con estos versátiles y elegantes zapatos. Diseñados para adaptarse a tu estilo de vida y brindarte el máximo confort en cada paso.</p>
-            </div>
         </div>
         <div class="carousel-slide">
             <img src="{% static 'img/slides/adidas-shoes-sneakers-sport-wallpaper-preview.jpg' %}" alt="Imagen 3">
-            <div class="carousel-description">
-                <h3 class="carousel-slogan">Where Every Step Matters</h3>
-                <p>Embárcate en una aventura deportiva con estos tenis Adidas llenos de energía y vitalidad. Potencia tu rendimiento mientras te destacas con estilo en el mundo del deporte.</p>
+        </div>
+    </div>
+</main>
+
+<section class="pagos">
+    <h3>NUESTROS MEDIOS DE PAGO:</h3>
+    <div class="medios-pagos-container">
+        <div class="medio-pagos">
+            <div class="medio-pagos-img-container medium">
+                <img src="{% static 'img/iconos/credit-card (1).png'%}" class="medio-pagos-img" style="width: 10vw; height:20vh;">
+                <span>Todas las tarjetas de Debito</span>
             </div>
         </div>
-        
-        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        <div class="medio-pagos">
+            <div class="medio-pagos-img-container medium">
+                <img src="{% static 'img/iconos/credit-card.png'%}" class="medio-pagos-img" style="width: 10vw; height:20vh;">
+                <span>Todas las tarjetas de credito</span>
+            </div>
         </div>
+        <div class="medio-pagos">
+            <div class="medio-pagos-img-container medium">
+                <img src="{% static '/img/iconos/cash.png' %}" style="width: 10vw; height:20vh;" class="medio-pagos-img"></img>
+                <span>Paganos en efectivo</span>
+            </div>
+        </div>
+    </div>
+</section>
 
-        </main>
+<section class="novedades-container">
+    <div class="novedades-title">
+        <h2>NOVEDADES</h2><a href="{% url 'productos' %}" class="more-productos">Más productos</a>
+    </div>
+    
+    <div class="novedades-productos">
+        <section class="card-container">
+            {% for x in zapatillas %}
+            <div class="product">
+                <img src="{{ x.imagen }}" alt="{{ x.nombre }}">
+                <h3>$ {{ x.precio }}</h3>
+                <p style='color:black'>{{ x.nombre }}</p>
+                <i class="add-to-cart fas fa-cart-shopping"></i>
+                <button class="add-to-fav"><i class="fas fa-heart"></i></button>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</section>
 {% endblock content %}

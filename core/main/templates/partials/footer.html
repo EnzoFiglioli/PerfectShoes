@@ -1,8 +1,21 @@
 {% load static %}
-
 <footer>
-    <p>&copy; Todos los derechos reservados.</p>
+    <p id="derechos">&copy; Todos los derechos reservados.</p>
+    <div class="footer-nav-container">
+        <ul class="nav-footer">
+            <li><a href="#">Talles</a></li>
+            <li><a href="#">Acerca de nosotros</a></li>
+            <li><a href="#">Terminos y condiciones</a></li>
+            <li><a href="#">Emprende con nosotros</a></li>
+            <li><a href="#">Contactanos</a></li>
+        </ul>
+        <ul class="nav-in-footer">
+            <li><a href="{% url 'inicio' %}" class="nav-link">Inicio</a></li>
+            <li><a href="#" class="nav-link">Recomendados</a></li>
+            <li><a href="#" class="nav-link">Categorías</a></li>
+            <li><a href="{% url 'productos' %}" class="nav-link">Productos</a></li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'scripts/app.js' %}"></script>
 </footer>
-<script src="{% static 'scripts/app.js' %}"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{% static 'scripts/carrito.js' %}"></script>

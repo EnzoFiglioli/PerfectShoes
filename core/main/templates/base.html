@@ -1,4 +1,5 @@
 {% load static %}
+<title>{% block title %}Inicio{% endblock %}</title>
 {% include 'partials/head.html' %}
 <body>
 {% include 'partials/navbar.html' %}
@@ -7,6 +8,17 @@
     
     {% endblock content %}
 </main>
+<!-- Modal -->
+<div id="modal-bg-gradient"> </div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Carrito de compras</h3>
+        <p>Aquí puedes ver los artículos en tu carrito.</p>
+    </div>
+</div>
+
 {% include 'partials/footer.html' %}
+<div class="overlay"></div>
 </body>
 </html>
